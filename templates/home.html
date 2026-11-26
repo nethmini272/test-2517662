@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Car Dealership</title> 
+    <a href="{% url 'add_car' %}">Add New Car</a>
+</head> 
+<body> 
+ 
+    <h1>Available Cars</h1> 
+ 
+    {% for car in cars %} 
+        <div> 
+            <h2>{{ car.name }}</h2> 
+            <p>Brand: {{ car.brand }}</p> 
+            <p>Year: {{ car.year }}</p> 
+            <p>Price: {{ car.price }}</p> 
+            <p>{{ car.description }}</p> 
+        </div> 
+        <hr> 
+    {% empty %} 
+        <p>No cars available.</p> 
+    {% endfor %} 
+ 
+</body> 
+</html> 
+ 
